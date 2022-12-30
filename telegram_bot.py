@@ -1,10 +1,18 @@
-from telegram import *
-from telegram.ext import * 
+from telegram import Bot, Update, KeyboardButton, ReplyKeyboardMarkup
+from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandler, CallbackQueryHandler, Filters
+from telegram.utils.request import Request
+from main_menu import choseLevel, queryHandler
+
+
 #from requests import *
 Token = "5408345091:AAFfpuuBU1ragRec9LWU-u8wp_SuZ_RbEQY"
-updater = Updater("5408345091:AAFfpuuBU1ragRec9LWU-u8wp_SuZ_RbEQY", use_context = True)
+req=Request(connect_timeout=0.5)
+bot=Bot(token=Token,request=req)
+updater = Updater(bot=bot, use_context = True)
 dispatcher = updater.dispatcher
 
+cmd=[("start","description from ptbcmd11"),("ptbcmd22","description from ptbcmd22")]
+bot.set_my_commands(cmd)
 
 def help(update, context):
     update.message.reply_text(
@@ -18,12 +26,8 @@ def help(update, context):
         )
 
 def startCommand(update: Update, context: CallbackContext):
-    buttons = [ [KeyboardButton("A1 Beginner")], 
-                [KeyboardButton("A2 Elementary")], 
-                [KeyboardButton("B1 Intermediate")],  
-                [KeyboardButton("B2 Upper-Intermediate")], 
-                [KeyboardButton("C1 Advanced")], 
-                [KeyboardButton("C2 Proficiency")] ]
+    buttons = [ [KeyboardButton("Start")], 
+                [KeyboardButton("End")]]
     context.bot.send_message(chat_id=update.effective_chat.id, text="What do you think is your level of English?", reply_markup=ReplyKeyboardMarkup(buttons))
 
 def content(update, context):
@@ -33,6 +37,9 @@ def Python(update, context):
     update.message.reply_text("Welcome : https://www.youtube.com/watch?v=sO42syEV4sY&ab_channel=MarkSolonin")
 
 allowedUsernames = []
+
+
+
 def messageHandler(update: Update, context: CallbackContext):
    # if update.effective_chat.username not in allowedUsernames:
    #     context.bot.send_message(chat_id=update.effective_chat.id, text="You are not allowed to use this bot")
@@ -42,13 +49,13 @@ def messageHandler(update: Update, context: CallbackContext):
     if "end" in update.message.text:
         update.message.reply_text("Welcome")
 
-    buttons = [[InlineKeyboardButton("👍", callback_data="like")], [InlineKeyboardButton("👎", callback_data="dislike")]]
-    context.bot.send_message(chat_id=update.effective_chat.id, reply_markup=InlineKeyboardMarkup(buttons), text="Did you like the image?")
 
-dispatcher.add_handler(CommandHandler('start', startCommand))
+
+dispatcher.add_handler(CommandHandler('start', choseLevel))
 dispatcher.add_handler(CommandHandler('help', help))
 dispatcher.add_handler(CommandHandler('content', content))
 dispatcher.add_handler(MessageHandler(Filters.text, messageHandler))
+dispatcher.add_handler(CallbackQueryHandler(queryHandler))
 
 updater.start_polling()
 updater.idle()
