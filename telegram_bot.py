@@ -11,7 +11,7 @@ bot=Bot(token=Token,request=req)
 updater = Updater(bot=bot, use_context = True)
 dispatcher = updater.dispatcher
 
-cmd=[("start","description from ptbcmd11"),("ptbcmd22","description from ptbcmd22")]
+cmd=[("start","Press to start testing"),("end","Press to end testing")]
 bot.set_my_commands(cmd)
 
 def help(update, context):
