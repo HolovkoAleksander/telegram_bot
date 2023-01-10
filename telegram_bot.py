@@ -1,7 +1,7 @@
 from telegram import Bot, Update, KeyboardButton, ReplyKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandler, CallbackQueryHandler, Filters
 from telegram.utils.request import Request
-from main_menu import choseLevel, queryHandler, messageHandler, setYourName
+from main_menu import  queryHandler, messageHandler, setYourName
 
 
 
