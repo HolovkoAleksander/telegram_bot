@@ -17,6 +17,8 @@ class DATA:
     good_answer = 0
 my_data = [DATA, DATA, DATA, DATA, DATA, DATA, DATA, DATA, DATA, DATA]
 
+
+result = []
 tempID = [1605176655, 1605176155]
 
 def setIDsesion (id):
@@ -45,7 +47,7 @@ def messageHandler(update: Update, context: CallbackContext):
                 my_data[chat_id].state = State.WAIT
                 update.message.reply_text("Good")
                 update.message.reply_text("After test")
-                context.bot.send_message(chat_id=master_chat_id, text="Hello")
+                context.bot.send_message(chat_id=master_chat_id, text="New ID: " + name)
                 my_data[chat_id].count = 0
                 my_data[chat_id].set_level = 10
                 my_data[chat_id].good_answer = 0
@@ -58,6 +60,7 @@ def messageHandler(update: Update, context: CallbackContext):
                 my_data[chat_id].state = State.WAIT
                 update.message.reply_text("Good")
                 context.bot.send_message(chat_id=master_chat_id, text=name)
+                endHandler()
             else:
                 update.message.reply_text("Thanks. Good buy")
                 return
@@ -110,11 +113,11 @@ def queryHandler(update: Update, context: CallbackContext):
     print("queryHandler : " + query)
     if "YES number" in query:
         my_data[chatID].state = State.NUMBER
-        context.bot.send_message(chat_id=update.effective_chat.id, text="Plese write your phone number")
+        context.bot.send_message(chat_id=update.effective_chat.id, text="Please write your phone number")
         return
     
     if "NO good bye" in query:
-        context.bot.send_message(chat_id=update.effective_chat.id, text="Good bye")
+        endHandler()
         return
         
     if "1" in query:
@@ -127,6 +130,7 @@ def queryHandler(update: Update, context: CallbackContext):
                 print(f"Ok")
             else:
                 print(f"Bad")
+            result.append(("1",  test[my_data[chatID].set_level][my_data[chatID].count - 1][4]))
 
     if "2" in query:
         count_up = 1
@@ -138,6 +142,7 @@ def queryHandler(update: Update, context: CallbackContext):
                 print(f"Ok")
             else:
                 print(f"Bad")
+            result.append(("2",  test[my_data[chatID].set_level][my_data[chatID].count - 1][4]))
 
     if "3" in query:
         count_up = 1
@@ -149,6 +154,7 @@ def queryHandler(update: Update, context: CallbackContext):
                 print(f"Ok")
             else:
                 print(f"Bad")
+            result.append(("3",  test[my_data[chatID].set_level][my_data[chatID].count - 1][4]))
 
     if "4" in query:
         count_up = 1
@@ -177,3 +183,12 @@ def queryHandler(update: Update, context: CallbackContext):
                 A1_level(update, context, my_data[chatID].count, my_data[chatID].set_level)
                 print(chatID, my_data[chatID].count)
                 my_data[chatID].count = my_data[chatID].count + 1 
+
+
+def endHandler(update: Update, context: CallbackContext):
+    context.bot.send_message(chat_id=update.effective_chat.id, text="Thanks for your attention!")
+    context.bot.send_message(chat_id=update.effective_chat.id, text="Good bye")
+    context.bot.send_message(chat_id=master_chat_id, text="ID :")
+    context.bot.send_message(chat_id=master_chat_id, text=update.effective_chat.id)
+    context.bot.send_message(chat_id=master_chat_id, text="RESULT: ")
+    context.bot.send_message(chat_id=master_chat_id, text=result)

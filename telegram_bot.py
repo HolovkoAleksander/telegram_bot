@@ -1,7 +1,7 @@
 from telegram import Bot, Update, KeyboardButton, ReplyKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandler, CallbackQueryHandler, Filters
 from telegram.utils.request import Request
-from main_menu import  queryHandler, messageHandler, setYourName
+from main_menu import  queryHandler, messageHandler, setYourName, endHandler
 
 
 
@@ -13,7 +13,7 @@ bot=Bot(token=Token,request=req)
 updater = Updater(bot=bot, use_context = True)
 dispatcher = updater.dispatcher
 
-cmd=[("start","Press to start testing"),("end","Press to end testing")]
+cmd=[("start","Press to start testing"),("about","Info about as"), ("end","Press to end testing")]
 bot.set_my_commands(cmd)
 
 def help(update, context):
@@ -32,8 +32,11 @@ def help(update, context):
  #               [KeyboardButton("End")]]
  #   context.bot.send_message(chat_id=update.effective_chat.id, reply_markup=ReplyKeyboardMarkup(buttons))
 
-def content(update, context):
-    update.message.reply_text("Welcome")
+def about(update, context):
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto.jpg", "rb"), caption = "У Бразилії евакуювали президента зі столиці через заворушення. Повідомляється, що прихильники колишнього президента країни Жаїра Болсонару увірвалися в урядові будівлі.\
+    За даними іноземних видань, одна частина демонстрантів, проникнувши в будівлю національного Конгресу, почала там робити селфі та різні фотознімки.\
+    Інша ж група людей почала штурмувати резиденцію президента. Водночас місцева влада вже віддала наказ ввести військових у столицю Бразилії, щоб заспокоїти громадян.\
+    Відомо, що самого президента Бразилії тимчасово евакуювали з міста через дії демонстрантів. Луїс Інасіо Лула да Сілва зараз перебуває в Сан-Паулу, зазначають закордонні журналісти.")
 
 def Python(update, context):
     update.message.reply_text("Welcome : https://www.youtube.com/watch?v=sO42syEV4sY&ab_channel=MarkSolonin")
@@ -46,8 +49,8 @@ allowedUsernames = []
 
 
 dispatcher.add_handler(CommandHandler('start', setYourName))
-dispatcher.add_handler(CommandHandler('help', help))
-dispatcher.add_handler(CommandHandler('content', content))
+dispatcher.add_handler(CommandHandler('about', about))
+dispatcher.add_handler(CommandHandler('end', endHandler))
 dispatcher.add_handler(MessageHandler(Filters.text, messageHandler))
 dispatcher.add_handler(CallbackQueryHandler(queryHandler))
 
