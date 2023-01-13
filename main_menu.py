@@ -150,11 +150,12 @@ def queryHandler(update: Update, context: CallbackContext):
 
     if "about" in query:
         about(update, context)
-        return   
+        return 
+
     if "a" in query:
         count_up = 1
         if my_data[chatID].set_level == 10:
-            my_data[chatID].set_level = 1
+            my_data[chatID].set_level = 0
         else:
             if "a" in test[my_data[chatID].set_level][my_data[chatID].count - 1][5]:
                 my_data[chatID].good_answer += 1
@@ -166,7 +167,7 @@ def queryHandler(update: Update, context: CallbackContext):
     if "b" in query:
         count_up = 1
         if my_data[chatID].set_level == 10:
-            my_data[chatID].set_level = 2
+            my_data[chatID].set_level = 1
         else:
             if "b" in test[my_data[chatID].set_level][my_data[chatID].count - 1][5]:
                 my_data[chatID].good_answer += 1
@@ -178,7 +179,7 @@ def queryHandler(update: Update, context: CallbackContext):
     if "c" in query:
         count_up = 1
         if my_data[chatID].set_level == 10:  
-            my_data[chatID].set_level = 3
+            my_data[chatID].set_level = 2
         else:
             if "c" in test[my_data[chatID].set_level][my_data[chatID].count - 1][5]:
                 my_data[chatID].good_answer += 1
@@ -190,7 +191,7 @@ def queryHandler(update: Update, context: CallbackContext):
     if "d" in query:
         count_up = 1
         if my_data[chatID].set_level == 10:
-            my_data[chatID].set_level = 4
+            my_data[chatID].set_level = 3
         else:
             if "d" in test[my_data[chatID].set_level][my_data[chatID].count - 1][5]:
                 my_data[chatID].good_answer += 1
@@ -201,7 +202,7 @@ def queryHandler(update: Update, context: CallbackContext):
 
     if (count_up):
         count_up = 0
-        if my_data[chatID].set_level != 0:
+        if my_data[chatID].set_level != 10:
             if my_data[chatID].count == 5: #30
                 set_number(update, context)
             else:

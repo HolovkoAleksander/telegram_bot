@@ -4,7 +4,7 @@
 test1 = \
        ("1.Tim and Sue _____ teachers.", "are" , "is", "isn’t", "aren’t", "a"), \
        ("2.This is Sébastien. He's _____ .", "Japan" , "Spain", "Italy", "French","d"), \
-       ("3.She's from Dublin. She _____ Irish.", "is from" , "is", "isn’t", "b"), \
+       ("3.She's from Dublin. She _____ Irish.", "is from" , "is", "isn’t", "are from",  "b"), \
        ("4.They _____ Welsh. They’re from Scotland.", "aren’t" , "is", "isn’t", "are", "a"), \
        ("5. _____ ’s your first name?", "Who", "What","How", "Where", "b"), \
        ("6.Those are your books and _____ are mine.", "these" , "this", "it", "that", "a"), \
