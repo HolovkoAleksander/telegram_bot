@@ -12,25 +12,31 @@ class State(Enum):
 master_chat_id = 1605176629
 
 class DATA:
-    state = State.WAIT
-    count = 0
-    set_level = 10
-    good_answer = 0
-my_data = [DATA, DATA, DATA]
+    def __init__(self, state, count, set_level, good_answer):
+        self.state = state
+        self.count = count
+        set_level = set_level
+        good_answer = good_answer
+class RESULT:
+    def __init__(self, count, answer, corret_answer):
+        self.count = count
+        answer = answer
+        corret_answer = corret_answer
+my_data = []
 
 
 result = []
-ls_result = [result, result]
-tempID = [1605176655, 1605176155]
+ls_result = []
+tempID = []
 
 def setIDsesion (id):
-    
-    for i in range(len(tempID)):
-        if id == tempID[i]:
-            return i
+    if len(tempID):
+        for i in range(len(tempID)):
+            if id == tempID[i]:
+                return i
     tempID.append(id)
     ls_result.append(result)
-    my_data.append(DATA)
+    my_data.append(DATA(State.WAIT, 0, 10 , 0))
     print("New ID")
     return len(tempID)
 
@@ -85,8 +91,13 @@ def setYourName(update: Update, context: CallbackContext):
     last_name = update.message.chat.last_name
     username = update.message.chat.username
     context.bot.send_message(chat_id=master_chat_id, text="New ID: " + str(chat_id))
-    context.bot.send_message(chat_id=master_chat_id, text=first_name +"/"+ last_name)
-    context.bot.send_message(chat_id=master_chat_id, text="Username: " + username)
+    if first_name:
+        if last_name:
+            context.bot.send_message(chat_id=master_chat_id, text=first_name +"/"+ last_name)
+        else:
+            context.bot.send_message(chat_id=master_chat_id, text=first_name)
+    if username:
+        context.bot.send_message(chat_id=master_chat_id, text="Username: " + username)
     update.message.reply_text("Hello " +  first_name)
     buttons = [[InlineKeyboardButton("Start test", callback_data="Start test")], 
                 [InlineKeyboardButton("About as", callback_data="about")]
@@ -162,7 +173,7 @@ def queryHandler(update: Update, context: CallbackContext):
                 print(f"Ok")
             else:
                 print(f"Bad")
-            ls_result[chatID].append((my_data[chatID].count - 1, "a",  test[my_data[chatID].set_level][my_data[chatID].count - 1][5]))
+            ls_result[chatID].append(RESULT(my_data[chatID].count, "a",  test[my_data[chatID].set_level][my_data[chatID].count - 1][5]))
 
     if "b" in query:
         count_up = 1
@@ -174,7 +185,7 @@ def queryHandler(update: Update, context: CallbackContext):
                 print(f"Ok")
             else:
                 print(f"Bad")
-            ls_result[chatID].append((my_data[chatID].count, "b",  test[my_data[chatID].set_level][my_data[chatID].count - 1][5]))
+            ls_result[chatID].append(RESULT(my_data[chatID].count, "b",  test[my_data[chatID].set_level][my_data[chatID].count - 1][5]))
 
     if "c" in query:
         count_up = 1
@@ -186,7 +197,7 @@ def queryHandler(update: Update, context: CallbackContext):
                 print(f"Ok")
             else:
                 print(f"Bad")
-            ls_result[chatID].append((my_data[chatID].count, "c",  test[my_data[chatID].set_level][my_data[chatID].count - 1][5]))
+            ls_result[chatID].append(RESULT(my_data[chatID].count, "c",  test[my_data[chatID].set_level][my_data[chatID].count - 1][5]))
 
     if "d" in query:
         count_up = 1
@@ -198,7 +209,7 @@ def queryHandler(update: Update, context: CallbackContext):
                 print(f"Ok")
             else:
                 print(f"Bad")
-            ls_result[chatID].append((my_data[chatID].count, "d",  test[my_data[chatID].set_level][my_data[chatID].count - 1][5]))
+            ls_result[chatID].append(RESULT(my_data[chatID].count, "d",  test[my_data[chatID].set_level][my_data[chatID].count - 1][5]))
 
     if (count_up):
         count_up = 0
@@ -208,6 +219,7 @@ def queryHandler(update: Update, context: CallbackContext):
             else:
                 A1_level(update, context, my_data[chatID].count, my_data[chatID].set_level)
                 print(chatID, my_data[chatID].count)
+                print(my_data[chatID].count)
                 my_data[chatID].count = my_data[chatID].count + 1 
 
 
@@ -220,7 +232,7 @@ def endHandler(update: Update, context: CallbackContext):
         context.bot.send_message(chat_id=master_chat_id, text="Level : " + str(my_data[chatID].set_level))
         context.bot.send_message(chat_id=master_chat_id, text="ID :" + str(update.effective_chat.id))
         context.bot.send_message(chat_id=master_chat_id, text="RESULT: ")
-        context.bot.send_message(chat_id=master_chat_id, text=ls_result[chatID])
+        context.bot.send_message(chat_id=master_chat_id, text=ls_result[chatID].)
         if my_data[chatID].count:
             procent = (my_data[chatID].good_answer * 100) / my_data[chatID].count  
             context.bot.send_message(chat_id=master_chat_id, text="Good answer: " + str(procent) + "%")
