@@ -1,5 +1,5 @@
 from telegram import Bot, Update, KeyboardButton, ReplyKeyboardMarkup
-from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandler, CallbackQueryHandler, Filters
+from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandler, CallbackQueryHandler, filters
 from telegram.utils.request import Request
 from main_menu import  queryHandler, messageHandler, setYourName, endHandler, about
 
@@ -46,7 +46,7 @@ allowedUsernames = []
 dispatcher.add_handler(CommandHandler('start', setYourName))
 dispatcher.add_handler(CommandHandler('about', about))
 dispatcher.add_handler(CommandHandler('end', endHandler))
-dispatcher.add_handler(MessageHandler(Filters.text, messageHandler))
+dispatcher.add_handler(MessageHandler(filters.text, messageHandler))
 dispatcher.add_handler(CallbackQueryHandler(queryHandler))
 
 updater.start_polling()

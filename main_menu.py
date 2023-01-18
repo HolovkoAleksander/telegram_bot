@@ -169,9 +169,11 @@ def queryHandler(update: Update, context: CallbackContext):
         else:
             if "a" in test[my_data[chatID].set_level][my_data[chatID].count - 1][5]:
                 my_data[chatID].good_answer += 1
+                context.bot.send_message(chat_id=update.effective_chat.id, text="✔️")
                 print(f"Ok")
             else:
                 print(f"Bad")
+                context.bot.send_message(chat_id=update.effective_chat.id, text="❎")
             ls_result[chatID].append([my_data[chatID].count, "a",  test[my_data[chatID].set_level][my_data[chatID].count - 1][5]])
 
     if "b" in query:
@@ -181,9 +183,11 @@ def queryHandler(update: Update, context: CallbackContext):
         else:
             if "b" in test[my_data[chatID].set_level][my_data[chatID].count - 1][5]:
                 my_data[chatID].good_answer += 1
+                context.bot.send_message(chat_id=update.effective_chat.id, text="✔️")
                 print(f"Ok")
             else:
                 print(f"Bad")
+                context.bot.send_message(chat_id=update.effective_chat.id, text="❎")
             ls_result[chatID].append( [my_data[chatID].count, "b",  test[my_data[chatID].set_level][my_data[chatID].count - 1][5]])
 
     if "c" in query:
@@ -193,9 +197,11 @@ def queryHandler(update: Update, context: CallbackContext):
         else:
             if "c" in test[my_data[chatID].set_level][my_data[chatID].count - 1][5]:
                 my_data[chatID].good_answer += 1
+                context.bot.send_message(chat_id=update.effective_chat.id, text="✔️")
                 print(f"Ok")
             else:
                 print(f"Bad")
+                context.bot.send_message(chat_id=update.effective_chat.id, text="❎")
             ls_result[chatID].append([my_data[chatID].count, "c",  test[my_data[chatID].set_level][my_data[chatID].count - 1][5]])
 
     if "d" in query:
@@ -205,16 +211,20 @@ def queryHandler(update: Update, context: CallbackContext):
         else:
             if "d" in test[my_data[chatID].set_level][my_data[chatID].count - 1][5]:
                 my_data[chatID].good_answer += 1
+                context.bot.send_message(chat_id=update.effective_chat.id, text="✔️")
                 print(f"Ok")
             else:
                 print(f"Bad")
+                context.bot.send_message(chat_id=update.effective_chat.id, text="❎")
             ls_result[chatID].append([ my_data[chatID].count, "d",  test[my_data[chatID].set_level][my_data[chatID].count - 1][5]])
 
     if (count_up):
         count_up = 0
         if my_data[chatID].set_level != 10:
             if my_data[chatID].count == 50:
-                set_number(update, context)
+                procent = (my_data[chatID].good_answer * 100) / my_data[chatID].count  
+                context.bot.send_message(chat_id=update.effective_chat.id, text="Good answer: " + str(procent) + "%")
+                set_number(update, context) 
             else:
                 A1_level(update, context, my_data[chatID].count, my_data[chatID].set_level)
                 print(chatID, my_data[chatID].count)
