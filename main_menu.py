@@ -58,8 +58,7 @@ def messageHandler(update: Update, context: CallbackContext):
     print(update.effective_chat.id)
     name = update.message.text
     print ("messageHandler" +  update.message.text)
-    match my_data[chat_id].state:
-        case State.NAME:
+    if my_data[chat_id].state == State.NAME:
             if len(name) > 2:
                 my_data[chat_id].state = State.WAIT
                 update.message.reply_text("Good")
@@ -72,7 +71,7 @@ def messageHandler(update: Update, context: CallbackContext):
             else:
                 update.message.reply_text("Name is shootly")
 
-        case State.NUMBER:
+    elif my_data[chat_id].state == State.NUMBER:
             if len(name) > 9:
                 my_data[chat_id].state = State.WAIT
                 update.message.reply_text("Thanks. Good buy")
@@ -81,7 +80,7 @@ def messageHandler(update: Update, context: CallbackContext):
             else:
                 update.message.reply_text("Number  is shootly")
                 return
-        case State.WAIT:
+    elif my_data[chat_id].state == State.WAIT:
             return
 
 def setYourName(update: Update, context: CallbackContext):
