@@ -38,8 +38,14 @@ def setIDsesion (id):
     my_data.append(DATA(State.WAIT, 0, 10 , 0))
     print("New ID")
     return len(tempID)
+def Contacts(update: Update, context: CallbackContext):
+    context.bot.send_message(chat_id=update.effective_chat.id,  text="097-127-19-27 Наталия" )
+    context.bot.send_message(chat_id=update.effective_chat.id,  text="natskor2012@gmail.com" )
+    context.bot.send_message(chat_id=update.effective_chat.id,  text="Київ, проспект Перемоги 118, офіс 224" )
+    context.bot.send_location(chat_id=update.effective_chat.id, latitude = 50.456896, longitude  = 30.377709)
 
-def about(update, context):
+
+def about(update: Update, context: CallbackContext):
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto.jpg", "rb"), caption = "У Бразилії евакуювали президента зі столиці через заворушення. Повідомляється, що прихильники колишнього президента країни Жаїра Болсонару увірвалися в урядові будівлі.\
     За даними іноземних видань, одна частина демонстрантів, проникнувши в будівлю національного Конгресу, почала там робити селфі та різні фотознімки.\
     Інша ж група людей почала штурмувати резиденцію президента. Водночас місцева влада вже віддала наказ ввести військових у столицю Бразилії, щоб заспокоїти громадян.\
@@ -96,11 +102,11 @@ def setYourName(update: Update, context: CallbackContext):
             context.bot.send_message(chat_id=master_chat_id, text=first_name)
     if username:
         context.bot.send_message(chat_id=master_chat_id, text="Username: " + username)
-    update.message.reply_text("Hello " +  first_name)
-    buttons = [[InlineKeyboardButton("Start test", callback_data="Start test")], 
-                [InlineKeyboardButton("About as", callback_data="about")]
+    buttons = [[InlineKeyboardButton("Start testing", callback_data="Start test")], 
+                [InlineKeyboardButton("About us", callback_data="about")],
+                [InlineKeyboardButton("Our contacts and location", callback_data="location")]
                 ]
-    context.bot.send_message(chat_id=update.effective_chat.id, reply_markup=InlineKeyboardMarkup(buttons), text="Please chouse what do you wont to do")
+    context.bot.send_message(chat_id=update.effective_chat.id, reply_markup=InlineKeyboardMarkup(buttons), text="Hello " +  first_name)
 
 def choseLevel(update: Update, context: CallbackContext):
    # if update.effective_chat.username not in allowedUsernames:
@@ -110,7 +116,7 @@ def choseLevel(update: Update, context: CallbackContext):
                 [InlineKeyboardButton("Intermediate", callback_data="b")],  
                 [InlineKeyboardButton("Upper-Intermediate", callback_data="c")], 
                 [InlineKeyboardButton("Advanced", callback_data="d")]]
-    context.bot.send_message(chat_id=update.effective_chat.id, reply_markup=InlineKeyboardMarkup(buttons), text="What do you think is your level of English?")
+    context.bot.send_message(chat_id=update.effective_chat.id, reply_markup=InlineKeyboardMarkup(buttons), text="What level do you want to choose?")
 
 def A1_level(update: Update, context: CallbackContext, count, set_level):
    # if update.effective_chat.username not in allowedUsernames:
@@ -126,10 +132,10 @@ def set_number(update: Update, context: CallbackContext):
    # if update.effective_chat.username not in allowedUsernames:
    #     context.bot.send_message(chat_id=update.effective_chat.id, text="You are not allowed to use this bot")
    #     return
-    buttons = [[InlineKeyboardButton("YES, and we will col to you", callback_data="YES number")], 
-                [InlineKeyboardButton("NO, I wont to ask from telegram", callback_data="NO good bye")]
+    buttons = [[InlineKeyboardButton("YES, I do", callback_data="YES number")], 
+                [InlineKeyboardButton("NO, don't", callback_data="NO good bye")]
                 ]
-    context.bot.send_message(chat_id=update.effective_chat.id, reply_markup=InlineKeyboardMarkup(buttons), text="Do you wont to write number yours fone?")
+    context.bot.send_message(chat_id=update.effective_chat.id, reply_markup=InlineKeyboardMarkup(buttons), text="Do you want us to call you back?")
 
 
 
@@ -140,12 +146,16 @@ def queryHandler(update: Update, context: CallbackContext):
     chatID = setIDsesion(update.effective_chat.id)
     count_up = 0
     print("queryHandler : " + query)
+    if "location" in query:
+        Contacts(update, context);
+        return
     if "YES number" in query:
         my_data[chatID].state = State.NUMBER
-        context.bot.send_message(chat_id=update.effective_chat.id, text="Please write your phone number")
+        context.bot.send_message(chat_id=update.effective_chat.id, text="Please, write your phone number")
         return
     
     if "NO good bye" in query:
+        context.bot.send_message(chat_id=update.effective_chat.id, text="You will know you answer through telegram")
         endHandler(update, context)
         return
 
@@ -221,8 +231,6 @@ def queryHandler(update: Update, context: CallbackContext):
         count_up = 0
         if my_data[chatID].set_level != 10:
             if my_data[chatID].count == 50:
-                procent = (my_data[chatID].good_answer * 100) / my_data[chatID].count  
-                context.bot.send_message(chat_id=update.effective_chat.id, text="Good answer: " + str(procent) + "%")
                 set_number(update, context) 
             else:
                 A1_level(update, context, my_data[chatID].count, my_data[chatID].set_level)
@@ -235,8 +243,7 @@ def queryHandler(update: Update, context: CallbackContext):
 
 def endHandler(update: Update, context: CallbackContext):
     chatID = setIDsesion(update.effective_chat.id)
-    context.bot.send_message(chat_id=update.effective_chat.id, text="Thanks for your attention!")
-    context.bot.send_message(chat_id=update.effective_chat.id, text="Good bye")
+    context.bot.send_message(chat_id=update.effective_chat.id, text="Hope to see you in our school!")
 
     if chatID <= (len(ls_result) - 1):
         context.bot.send_message(chat_id=master_chat_id, text="Level : " + str(my_data[chatID].set_level))
@@ -245,7 +252,8 @@ def endHandler(update: Update, context: CallbackContext):
         context.bot.send_message(chat_id=master_chat_id, text=ls_result[chatID])
         if my_data[chatID].count:
             procent = (my_data[chatID].good_answer * 100) / my_data[chatID].count  
-            context.bot.send_message(chat_id=master_chat_id, text="Good answer: " + str(procent) + "%")
+            context.bot.send_message(chat_id=master_chat_id, text="Correct answers: " + str(procent) + "%")
+            context.bot.send_message(chat_id=update.effective_chat.id, text="Correct answers: " + str(procent) + "%")
         ls_result[chatID].clear()
         tempID.pop(chatID)
         ls_result.pop(chatID)
