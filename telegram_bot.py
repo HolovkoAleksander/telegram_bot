@@ -13,9 +13,8 @@ bot=Bot(token=Token,request=req)
 updater = Updater(bot=bot, use_context = True)
 dispatcher = updater.dispatcher
 
-cmd=[("start","Press to start testing"),("about","Info about as"), ("end","Press to end testing")]
+cmd=[("start","Початок тесту"),("about","Інформація про нас"), ("end","Закінчити тест, та отримати результати")]
 bot.set_my_commands(cmd)
-
 def help(update, context):
     update.message.reply_text(
         """
