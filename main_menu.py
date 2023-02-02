@@ -138,10 +138,10 @@ def set_number(update: Update, context: CallbackContext):
    # if update.effective_chat.username not in allowedUsernames:
    #     context.bot.send_message(chat_id=update.effective_chat.id, text="You are not allowed to use this bot")
    #     return
-    buttons = [[InlineKeyboardButton("YES, I do", callback_data="YES number")], 
-                [InlineKeyboardButton("NO, don't", callback_data="NO good bye")]
+    buttons = [[InlineKeyboardButton("YES", callback_data="YES number")], 
+                [InlineKeyboardButton("NO", callback_data="NO good bye")]
                 ]
-    context.bot.send_message(chat_id=update.effective_chat.id, reply_markup=InlineKeyboardMarkup(buttons), text="Do you want us to call you back? Чи бажаете щоб Ми до Вас зателефонували?")
+    context.bot.send_message(chat_id=update.effective_chat.id, reply_markup=InlineKeyboardMarkup(buttons), text="Do you want us to call you back? Чи бажаете, щоб ми Вам зателефонували?")
 
 
 
