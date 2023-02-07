@@ -1,6 +1,4 @@
 
-
-
 test1 = \
        ("1.Tim and Sue _____ teachers.", "are" , "is", "isn’t", "aren’t", "a"), \
        ("2.This is Sébastien. He's _____ .", "Japan" , "Spain", "Italy", "French","d"), \
@@ -21,39 +19,42 @@ test1 = \
        ("17. How many children _____ got?", "they’ve", "have they", "they", "do they", "b"), \
        ("18. She _____ jeans to work.", "wears usually", "is usually wearing", "usually wears", "is wearing usually", "c"), \
        ("19. _____ two armchairs and a sofa in the living room.", "It’s", "There are", "There have", "There’s", "b"), \
-       ("20. There aren’t _____ wardrobes in the main bedroom.", "any", "some", "the", "a", "a"), \
-       ("21. You _____ buy shoes in a post office.", "can to", "can", "can’t", "are", "c"), \
-       ("22. There are a lot of CDs _____ the shelves.", "in", "between", "on", "above", "c"), \
-       ("23. The cinema is _____ the bank.", "next", "in front", "opposite", "under", "c"), \
-       ("24. Can I have a _____ of milk, please?", "bar", "jar", "box", "carton", "d"), \
-       ("25. There is _____ butter in the fridge.", "one", "some", "any", "an", "b"), \
-       ("26. How _____ vegetables do you eat every day?", "many", "long", "more", "much", "a"), \
-       ("27. He _____ afraid of the dark when he was young.", "wasn’t", "weren’t", "were", "didn’t", "a"), \
-       ("28. We _____ born in 1985.", "is", "were", "was", "did", "b"), \
-       ("29. My birthday is on February _____.", "10rd", "10st", "10nd", "10th",  "d"), \
-       ("30. _____ they do a lot of sport when they were at school?", "Were", "Do", "Was", "Did", "d"), \
-       ("31. We _____ to New Zealand when I was six.", "move", "moves", "moved", "moving", "c"), \
-       ("32. They _____ a taxi to the airport an hour ago.", "take", "took", "are taking", "takes", "b"), \
-       ("33. _____ did you last see them?", "What", "When", "Who", "Which", "b"), \
-       ("34. We went _____ at the weekend.", "the shops", "to shops", "shopping", "shops", "c"), \
-       ("35. Is Chinese food _____ than Thai food?", "best", "more good", "better", "well", "c"), \
-       ("36. Today is _____ than yesterday.", "cold", "coldest", "more cold", "colder", "d"), \
-       ("37. He stayed at the _____ hotel in town.", "more expensive", "expensivest", "expensive", "most expensive", "d"), \
-       ("38. Can you tell me the _____ to the library?", "road", "way", "street", "place", "b"), \
-       ("39. They ______ their homework now.", "are do", "did", "are doing", "does", "c"), \
-       ("40. We walked ten kilometres so we ______ hungry now.", "are getting", "get", "got", "has got", "a"), \
-       ("41. What ______ doing at the moment?", "is he", "does he", "is", "he’s", "a"), \
-       ("42. He goes to work ______ train.", "in", "on", "by the", "by", "d"), \
-       ("43. You ______ drive a car in the centre of town. It isn’t allowed.", "don’t have to", "can", "have to", "can’t", "d"), \
-       ("44. You ______ to walk, you can take a bus.", "mustn’t", "have", "must", "don’t have", "d"), \
-       ("45. He ______ to move to another country.", "want", "’d like", "likes", "goes", "b"), \
-       ("46. I’m ______ learn to cook.", "go to", "going", "going to", "go", "c"), \
-       ("47. Don't stay up late or you ______ be tired tomorrow.", "must", "won’t", "should", "’ll", "d"), \
-       ("48. Let’s ______ tennis this afternoon.", "play", "go", "to go", "playing",  "a"), \
-       ("49. I’ve got the flu. I ______ take some medicine.", "shouldn’t", "might not", "going to", "should", "d"), \
-       ("50. ______ you spoken to Jenny?", "Did", "Do", "Have", "Has", "c")
+       ("20. There aren’t _____ wardrobes in the main bedroom.", "any", "some", "the", "a", "a")
+       
 
 test2 = \
+       ("1. You _____ buy shoes in a post office.", "can to", "can", "can’t", "are", "c"), \
+       ("2. There are a lot of CDs _____ the shelves.", "in", "between", "on", "above", "c"), \
+       ("3. The cinema is _____ the bank.", "next", "in front", "opposite", "under", "c"), \
+       ("4. Can I have a _____ of milk, please?", "bar", "jar", "box", "carton", "d"), \
+       ("5. There is _____ butter in the fridge.", "one", "some", "any", "an", "b"), \
+       ("6. How _____ vegetables do you eat every day?", "many", "long", "more", "much", "a"), \
+       ("7. He _____ afraid of the dark when he was young.", "wasn’t", "weren’t", "were", "didn’t", "a"), \
+       ("8. We _____ born in 1985.", "is", "were", "was", "did", "b"), \
+       ("9. My birthday is on February _____.", "10rd", "10st", "10nd", "10th",  "d"), \
+       ("10. _____ they do a lot of sport when they were at school?", "Were", "Do", "Was", "Did", "d"), \
+       ("11. We _____ to New Zealand when I was six.", "move", "moves", "moved", "moving", "c"), \
+       ("12. They _____ a taxi to the airport an hour ago.", "take", "took", "are taking", "takes", "b"), \
+       ("13. _____ did you last see them?", "What", "When", "Who", "Which", "b"), \
+       ("14. We went _____ at the weekend.", "the shops", "to shops", "shopping", "shops", "c"), \
+       ("15. Is Chinese food _____ than Thai food?", "best", "more good", "better", "well", "c"), \
+       ("16. Today is _____ than yesterday.", "cold", "coldest", "more cold", "colder", "d"), \
+       ("17. He stayed at the _____ hotel in town.", "more expensive", "expensivest", "expensive", "most expensive", "d"), \
+       ("18. Can you tell me the _____ to the library?", "road", "way", "street", "place", "b"), \
+       ("19. They ______ their homework now.", "are do", "did", "are doing", "does", "c"), \
+       ("20. We walked ten kilometres so we ______ hungry now.", "are getting", "get", "got", "has got", "a"), \
+       ("21. What ______ doing at the moment?", "is he", "does he", "is", "he’s", "a"), \
+       ("22. He goes to work ______ train.", "in", "on", "by the", "by", "d"), \
+       ("23. You ______ drive a car in the centre of town. It isn’t allowed.", "don’t have to", "can", "have to", "can’t", "d"), \
+       ("24. You ______ to walk, you can take a bus.", "mustn’t", "have", "must", "don’t have", "d"), \
+       ("25. He ______ to move to another country.", "want", "’d like", "likes", "goes", "b"), \
+       ("26. I’m ______ learn to cook.", "go to", "going", "going to", "go", "c"), \
+       ("27. Don't stay up late or you ______ be tired tomorrow.", "must", "won’t", "should", "’ll", "d"), \
+       ("28. Let’s ______ tennis this afternoon.", "play", "go", "to go", "playing",  "a"), \
+       ("29. I’ve got the flu. I ______ take some medicine.", "shouldn’t", "might not", "going to", "should", "d"), \
+       ("30. ______ you spoken to Jenny?", "Did", "Do", "Have", "Has", "c")
+
+test3 = \
        ("1. ______ does that jacket cost?", "How often", "How long", "How many", "How much", "d"), \
        ("2. ______ did you leave your job?", "Where", "What", "Why", "Which", "c"), \
        ("3. They ______ fly to India.", "didn’t", "doesn’t", "haven’t", "has", "a"), \
@@ -105,7 +106,7 @@ test2 = \
        ("49. ______ be possible to reserve a table for tonight?", "Can I ", "Could you", "Would it", "Will", "c"), \
        ("50. Could you ______ a good film?", "say me", "recommend", "tell me", "advice", "b")
 
-test3 = \
+test4 = \
        ("1. When ______ arrive?", "they did", "did they", "have they", "does they", "b"), \
        ("2. Who ______ all this mess?", "made", "did make", "are make", "was making", "a"), \
        ("3. He’s French but he ______ in London at the moment.", "living", "does live", "’s living", "lived", "c"), \
@@ -158,7 +159,7 @@ test3 = \
        ("50. Why don’t we ______ to take them to the airport?", "suggest", "warn", "offer", "explain", "c")
 
 
-test4 = \
+test5 = \
        ("1. What ______ at the end of the film? I missed it.", "did happen", "happened", "’s happened", "was happened", "b"), \
        ("2. Do you mind me asking how old ______ ?", "are you", "you’re", "you are", "you have", "c"), \
        ("3. ______ if you’d like to meet up tomorrow.", "I’d be interested to", "Can I ask", "Do you know", "I was wondering", "d"), \
@@ -210,4 +211,4 @@ test4 = \
        ("49. A book ______ by a twelve-year-old girl has won a €10,000 prize. ", "wrote", "writing", "been written", "written", "b"), \
        ("50. ______ people’s names has always been something I’ve found incredibly difficult.", "To remember", "For remembering", "Remembering", "To remembering", "c")
 
-test = test1, test2, test3, test4, 
+test = test1, test2, test3, test4, test5

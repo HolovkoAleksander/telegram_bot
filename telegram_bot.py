@@ -32,10 +32,7 @@ def help(update, context):
  #   context.bot.send_message(chat_id=update.effective_chat.id, reply_markup=ReplyKeyboardMarkup(buttons))
 
 
-def Python(update, context):
-    update.message.reply_text("Welcome : https://www.youtube.com/watch?v=sO42syEV4sY&ab_channel=MarkSolonin")
 
-allowedUsernames = []
 
 
 

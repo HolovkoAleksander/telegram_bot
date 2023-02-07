@@ -51,13 +51,15 @@ def about(update: Update, context: CallbackContext):
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/3.JPG", "rb"))
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/4.JPG", "rb"))
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/5.JPG", "rb"))
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/6.JPG", "rb"), caption = "Зарпрошуємо на курси англійської та укркаїнської мови, математика,  підготовка до школи. \
-Ми пропонуємо курси різних напрямків, форматів, тривалості й інтенсивності занять. \
-Обирайте курс, який підійде саме Вам  для досягення ваших цілей. А у вихідні - розмовний клуб. \
-Практика з носіями мови. \
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/6.JPG", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/7.JPG", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/8.JPG", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/9.JPG", "rb"), caption = "Зарпрошуємо на курси англійської та укркаїнської мови, математики, підготовки до школи. \
+Ми пропонуємо курси різних напрямів, форматів, тривалості й інтенсивності занять. \
+ А у вихідні - розмовний клуб. Практика з носіями мови. \
 Зручний графік - ранковий і вечірній час занять. \
 Підготовка до міжнародних іспитів. \
-")
+Обирайте курс, який підійде саме вам  для досягення ваших цілей.")
     buttons = [[InlineKeyboardButton("Start test, Почати тест", callback_data="Start test")], 
                 [InlineKeyboardButton("Finish, закінчити", callback_data="NO good bye")]
                 ]
@@ -120,9 +122,10 @@ def choseLevel(update: Update, context: CallbackContext):
    #     context.bot.send_message(chat_id=update.effective_chat.id, text="You are not allowed to use this bot")
    #     return
     buttons = [ [InlineKeyboardButton("Elementary, початковий", callback_data="a")], 
-                [InlineKeyboardButton("Intermediate, середній", callback_data="b")],  
-                [InlineKeyboardButton("Upper-Intermediate, вище середнього", callback_data="c")], 
-                [InlineKeyboardButton("Advanced, вищій", callback_data="d")]]
+                [InlineKeyboardButton("Pre-Intermediate, нижче середнього", callback_data="b")],  
+                [InlineKeyboardButton("Intermediate, середній", callback_data="c")],  
+                [InlineKeyboardButton("Upper-Intermediate, вище середнього", callback_data="d")], 
+                [InlineKeyboardButton("Advanced, вищій", callback_data="e")]]
     context.bot.send_message(chat_id=update.effective_chat.id, reply_markup=InlineKeyboardMarkup(buttons), text="What level do you want to choose?   Як ви вважаете який у Вас рівень?")
 def A1_level(update: Update, context: CallbackContext, count, set_level):
    # if update.effective_chat.username not in allowedUsernames:
@@ -242,10 +245,16 @@ def queryHandler(update: Update, context: CallbackContext):
                 ls_result[chatID].append([ my_data[chatID].count, "d",  test[my_data[chatID].set_level][my_data[chatID].count - 1][5]])
             else:
                 return
+    if "e" in query:
+        count_up = 1
+        if my_data[chatID].set_level == 10:
+            my_data[chatID].set_level = 4
     if (count_up):
         count_up = 0
         if my_data[chatID].set_level != 10:
-            if my_data[chatID].count == 50:
+            if ((my_data[chatID].set_level == 0) & (my_data[chatID].count == 20)) | \
+            ((my_data[chatID].set_level == 1) & (my_data[chatID].count == 30)) | \
+            ((my_data[chatID].set_level > 1) & (my_data[chatID].count == 50)):
                 set_number(update, context) 
             else:
                 print("next")
@@ -261,7 +270,9 @@ def endHandler(update: Update, context: CallbackContext):
     chatID = setIDsesion(update.effective_chat.id)
     context.bot.send_message(chat_id=update.effective_chat.id, text="Hope to see you in our school!")
     context.bot.send_message(chat_id=update.effective_chat.id, text="Сподіваемось побачити Вас в нашій школі!")
-
+    if my_data[chatID].set_level == 10:
+        tempID.pop(chatID)
+        return
     if chatID <= (len(ls_result) - 1):
         context.bot.send_message(chat_id=master_chat_id, text="Level : " + str(my_data[chatID].set_level))
         context.bot.send_message(chat_id=master_chat_id, text="ID :" + str(update.effective_chat.id))
