@@ -7,7 +7,8 @@ from main_menu import  queryHandler, messageHandler, setYourName, endHandler, ab
 
 
 #from requests import *
-Token = "5408345091:AAFfpuuBU1ragRec9LWU-u8wp_SuZ_RbEQY"
+Token_debug = "5408345091:AAFfpuuBU1ragRec9LWU-u8wp_SuZ_RbEQY"
+Token = "5839714952:AAFqFuaqLM7BRNJ2CILfdtQe9UaKKHmKmBY"
 req=Request(connect_timeout=0.5)
 bot=Bot(token=Token,request=req)
 updater = Updater(bot=bot, use_context = True)
