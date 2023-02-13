@@ -54,7 +54,8 @@ def about(update: Update, context: CallbackContext):
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/6.JPG", "rb"))
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/7.JPG", "rb"))
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/8.JPG", "rb"))
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/9.JPG", "rb"), caption = "Зарпрошуємо на курси англійської та укркаїнської мови, математики, підготовки до школи. \
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/9.JPG", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/10.JPG", "rb"), caption = "Зарпрошуємо на курси англійської та укркаїнської мови, математики, підготовки до школи. \
 Ми пропонуємо курси різних напрямів, форматів, тривалості й інтенсивності занять. \
  А у вихідні - розмовний клуб. Практика з носіями мови. \
 Зручний графік - ранковий і вечірній час занять. \
@@ -124,7 +125,7 @@ def choseLevel(update: Update, context: CallbackContext):
     buttons = [ [InlineKeyboardButton("Elementary, початковий", callback_data="a")], 
                 [InlineKeyboardButton("Pre-Intermediate, нижче середнього", callback_data="b")],  
                 [InlineKeyboardButton("Intermediate, середній", callback_data="c")],  
-                [InlineKeyboardButton("Upper-Intermediate, вище середнього", callback_data="d")], 
+                [InlineKeyboardButton("Upper-Intermediate, вищий середнього", callback_data="d")], 
                 [InlineKeyboardButton("Advanced, вищій", callback_data="e")]]
     context.bot.send_message(chat_id=update.effective_chat.id, reply_markup=InlineKeyboardMarkup(buttons), text="What level do you want to choose?   Як ви вважаете який у Вас рівень?")
 def A1_level(update: Update, context: CallbackContext, count, set_level):
