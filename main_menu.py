@@ -125,8 +125,8 @@ def choseLevel(update: Update, context: CallbackContext):
     buttons = [ [InlineKeyboardButton("Elementary, початковий", callback_data="a")], 
                 [InlineKeyboardButton("Pre-Intermediate, нижче середнього", callback_data="b")],  
                 [InlineKeyboardButton("Intermediate, середній", callback_data="c")],  
-                [InlineKeyboardButton("Upper-Intermediate, вищий середнього", callback_data="d")], 
-                [InlineKeyboardButton("Advanced, вищій", callback_data="e")]]
+                [InlineKeyboardButton("Upper-Intermediate, вище середнього", callback_data="d")], 
+                [InlineKeyboardButton("Advanced, вищий", callback_data="e")]]
     context.bot.send_message(chat_id=update.effective_chat.id, reply_markup=InlineKeyboardMarkup(buttons), text="What level do you want to choose?   Як ви вважаете який у Вас рівень?")
 def A1_level(update: Update, context: CallbackContext, count, set_level):
    # if update.effective_chat.username not in allowedUsernames:
@@ -154,7 +154,7 @@ def queryHandler(update: Update, context: CallbackContext):
     update.callback_query.answer()
     chatID = setIDsesion(update.effective_chat.id)
     count_up = 0
-    print("queryHandler : " + query)
+    #print("queryHandler : " + query)
     if "location" in query:
         Contacts(update, context)
         return
@@ -258,7 +258,6 @@ def queryHandler(update: Update, context: CallbackContext):
             ((my_data[chatID].set_level > 1) & (my_data[chatID].count == 50)):
                 set_number(update, context) 
             else:
-                print("next")
                 A1_level(update, context, my_data[chatID].count, my_data[chatID].set_level)
                 print(chatID, my_data[chatID].count)
                 print(my_data[chatID].count)
@@ -276,6 +275,9 @@ def endHandler(update: Update, context: CallbackContext):
         return
     if chatID <= (len(ls_result) - 1):
         context.bot.send_message(chat_id=master_chat_id, text="Level : " + str(my_data[chatID].set_level))
+        username = update.effective_chat.username
+        if username:
+            context.bot.send_message(chat_id=master_chat_id, text="Username: " + username)
         context.bot.send_message(chat_id=master_chat_id, text="ID :" + str(update.effective_chat.id))
         context.bot.send_message(chat_id=master_chat_id, text="RESULT: ")
         context.bot.send_message(chat_id=master_chat_id, text=ls_result[chatID])
