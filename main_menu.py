@@ -39,7 +39,7 @@ def setIDsesion (id):
     print("New ID")
     return len(tempID)
 def Contacts(update: Update, context: CallbackContext):
-    context.bot.send_message(chat_id=update.effective_chat.id,  text="097-127-19-27 Наталія" )
+    context.bot.send_message(chat_id=update.effective_chat.id,  text="097-127-19-88 Наталія" )
     context.bot.send_message(chat_id=update.effective_chat.id,  text="natskor2012@gmail.com" )
     context.bot.send_message(chat_id=update.effective_chat.id,  text="Київ, проспект Перемоги 118, офіс 224" )
     context.bot.send_location(chat_id=update.effective_chat.id, latitude = 50.456896, longitude  = 30.377709)
