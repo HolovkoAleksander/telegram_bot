@@ -60,6 +60,7 @@ def about(update: Update, context: CallbackContext):
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/12.JPG", "rb"))
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/13.JPG", "rb"))
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/14.JPG", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/15.JPG", "rb"))
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/112.JPG", "rb"), caption = "English teacher")
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/113.JPG", "rb"), caption = "English teacher")
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/114.JPG", "rb"), caption = "English teacher")
