@@ -57,12 +57,16 @@ def about(update: Update, context: CallbackContext):
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/9.JPG", "rb"))
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/10.JPG", "rb"))
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/11.JPG", "rb"))
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/12.JPG", "rb"), caption = "English teacher")
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/13.JPG", "rb"), caption = "English teacher")
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/14.JPG", "rb"), caption = "English teacher")
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/15.JPG", "rb"), caption = "Вчитель математики")
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/16.JPG", "rb"), caption = "Вчитель української мови")
-    context.bot.send_message(chat_id=update.effective_chat.id,  text="Зарпрошуємо на курси англійської та укркаїнської мови, математики, підготовки до школи. \
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/12.JPG", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/13.JPG", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/14.JPG", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/112.JPG", "rb"), caption = "English teacher")
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/113.JPG", "rb"), caption = "English teacher")
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/114.JPG", "rb"), caption = "English teacher")
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/115.JPG", "rb"), caption = "Вчитель математики")
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/116.JPG", "rb"), caption = "Вчитель української мови")
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/117.JPG", "rb"), caption = "Вчитель підготовки до школи")
+    context.bot.send_message(chat_id=update.effective_chat.id,  text="Зарпрошуємо на курси англійської та української мови, математики, підготовки до школи. \
 Ми пропонуємо курси різних напрямів, форматів, тривалості й інтенсивності занять. \
  А у вихідні - розмовний клуб. Практика з носіями мови. \
 Зручний графік - ранковий і вечірній час занять. \
