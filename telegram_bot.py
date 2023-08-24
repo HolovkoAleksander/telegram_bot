@@ -3,7 +3,8 @@ from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandle
 from telegram.utils.request import Request
 from main_menu import  queryHandler, messageHandler, setYourName, endHandler, about
 
-
+#python3 telegram_bot.py > /dev/null 2>&1 &
+#disown %1
 
 
 #from requests import *

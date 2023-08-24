@@ -211,4 +211,78 @@ test5 = \
        ("49. A book ______ by a twelve-year-old girl has won a €10,000 prize. ", "wrote", "writing", "been written", "written", "b"), \
        ("50. ______ people’s names has always been something I’ve found incredibly difficult.", "To remember", "For remembering", "Remembering", "To remembering", "c")
 
-test = test1, test2, test3, test4, test5
+
+
+testMH = \
+       ("1. Математика.", "did happen", "happened", "’s happened", "was happened", "b"), \
+       ("2. Do you mind me asking how old ______ ?", "are you", "you’re", "you are", "you have", "c"), \
+       ("3. ______ if you’d like to meet up tomorrow.", "I’d be interested to", "Can I ask", "Do you know", "I was wondering", "d"), \
+       ("4. They ______ in a large house for twenty years before moving to a bungalow.", "’ve lived", "lived", "already live", "recently lived", "b"), \
+       ("5. Have you heard from your brother ______?", "recently", "still", "last week", "this time last month", "a"), \
+       ("6. I ______ for my car keys for half an hour and I still haven’t found them!", "’ve been looked", "’ve been looking", "looked", "’m looking", "b"), \
+       ("7. Billy ______ watching motorbike races.", "always has loved", "’s always loving", "’s always loved", "’s always been loving", "c"), \
+       ("8. Her parents are very proud. She ______ a fantastic job in a well known law firm.", "been offered", "offered", "is offered", "’s been offered", "d"), \
+       ("9. How much do you think he ______ as director of the company?", "is been paid", "has being paid", "’s being paid", "being paid", "c"), \
+       ("10. You should ______ what to do when you get to the office.", "be told", "be tell", "told", "tell", "a"), \
+       ("11. He ______ for his plane for an hour when it was suddenly cancelled.", "was waiting", "’d been waiting", "waited", "’s been waiting", "b"), \
+       ("12. When we walked into the hotel, a log fire ______ in the fireplace.", "burnt", "’d burnt", "was burning", "’s burning", "c"), \
+       ("13. My car’s just broken down for the third time. I wish I ______ it.", "didn't buy", "’d bought", "wasn't buying", "hadn't bought", "d"), \
+       ("14. If only ______ a foreign language. I didn't have the choice at school.", "I can speak", "I speak", "I could speak", "I could to speak", "c"), \
+       ("15. Jim ______ sharing a flat but now he prefers to live on his own.", "used to like", "would like	", "never use to like", "never used to", "a"), \
+       ("16. Liane ______ complaining about her long drive to work. In the end, she decided to change jobs.", "is generally", "used to", "would be", "was always", "d"), \
+       ("17. They ______ us at the weekend. It depends on the weather. ", "might visit", "are visiting", "are going to visit", "due to visit", "a"), \
+       ("18. He ______ hungry when he gets home from football practice.", "likely to be", "’s likely to be", "like to be", "’ll like to be", "b"), \
+       ("19. We ______ to get married next April.", " ’ll probably", "’re planning", "’re definitely", "might", "b"), \
+       ("20. How many people have climbed ______ Mount Everest?", "a", "the", "in", "-", "d"), \
+       ("21. The children played in the garden with ______ ball I’d given them.", "a", "the", "an", "-", "b"), \
+       ("22. If you lend me €200, I ______ you back at the end of the month. ", "might paid", "will pay", "’ll  paying", "would pay", "b"), \
+       ("23. If I ______ to your proposal, when could we sign the contract?", "was agreed", "were agreeing", "were to agree", "weren’t agree", "c"), \
+       ("24. Children under 15 could attend ______ they were with an adult.", "providing to", "as long as", "if only", "as long than", "b"), \
+       ("25. We ______ show our passports when we left the country.", "mustn't", "weren't allowed", "were obliged", "didn't have to", "d"), \
+       ("26. We had very little petrol left in the car but we ______ get home in the end.", "must", "managed to", "were able", "could", "b"), \
+       ("27. This time tomorrow, they ______ in San Francisco. How exciting!", "’ll land", "’ll be landed", "’ll be landing", "have landed", "c"), \
+       ("28. When do you think you ______ painting the house?", "finish", "’ll have finished", "be finishing", "to finish", "b"), \
+       ("29. There are still ______ citizens who feel unhappy about the changes made by the government.", "a little of", "quite many", "quite a few", "a great deal", "c"), \
+       ("20. ______ of people rely on public transport to get to work these days.", "Not many", "A little", "Quite a few", "Plenty", "d"), \
+       ("31. Dad says he ______ to cook pasta for dinner tonight.", "’s going", "was", "would", "might", "a"), \
+       ("32. The teacher wanted to know why ______ his homework last night.", "hadn't Tom done", "Tom hasn't done", "Tom hadn't done", "Tom isn't doing", "c"), \
+       ("33. They told ______ start work the following Monday.", " me I can", "me", "I’ll", "I could", "a"), \
+       ("34. If she ______ to be fluent in French, she could have applied for the job.", "hadn’t needed", "needs", "doesn’t need", "’s needed", "a"), \
+       ("35. They ______ here by now if the train had been on time.", "weren’t", "would’ve be", "’d been", "’d have been", "d"), \
+       ("36. If I hadn't ignored my parents advice, I ______ a great musician.", "would’ve become", "might’ve became", "had became", "hadn’t become", "a"), \
+       ("37. ______ a world class athlete is a lot harder than it looks.", "For being", "To be", "To being", "Being", "d"), \
+       ("38. You’d ______ late for work again or you’ll get fired.", "be better", "better not be", "better be", "better not being", "b"), \
+       ("39. She went to the doctor because she keeps ______ headaches.", "on to get", "to getting", "to get", "getting", "d"), \
+       ("40. She finally stopped ______ when the price of cigarettes went up again.", "to smoke", "the smoke", "smoking", "for to smoke", "c"), \
+       ("41. I’ll never ______ snow for the first time.", "forget seeing", "forget to see", "forget to seeing", "to forget seeing", "a"), \
+       ("42. Do you ever regret ______ Canada and returning to your home country?", "to leaving", "leaving", "for leaving", "to leave", "b"), \
+       ("43. We ______ a serious accident when you drove through that red light!", "have had", "can’t have had", "must’ve had", "could’ve had", "d"), \
+       ("44. The neighbours ______ the music from your party. It was terribly loud. You should go and apologise to them.", "must’ve heard", "’ll hear", "couldn’t hear", "can’t have heard", "a"), \
+       ("45. The gym ______ I go to work out is open twenty-four hours a day.", "when", "which", "that", "where", "d"), \
+       ("46. I wasn't keen on the restaurant ______ we went to last weekend.", "what", "-", "whose", "when", "b"), \
+       ("47. They’re having lunch with his girlfriend’s parents, ______ live in Brighton.", "they", "who", "that", "whom", "b"), \
+       ("48. I almost fell over a pile of books ______ on the carpet.", "that are laid", "which lying", "lying", "who was lying", "c"), \
+       ("49. A book ______ by a twelve-year-old girl has won a €10,000 prize. ", "wrote", "writing", "been written", "written", "b"), \
+       ("50. ______ people’s names has always been something I’ve found incredibly difficult.", "To remember", "For remembering", "Remembering", "To remembering", "c")
+testUKR = \
+       ("1. Яке слово із запропонованих зайве?", "продаж", "нежить", "тюль", "путь", "d"), \
+       ("2. Яке слово зайве?", "Андріє", "Маріє", "Денисе", "Надіє ", "a"), \
+       ("3. Яке слово зайве? (кого? чого?)", "оркестру", "футболу", "конверту", "компоту", "c"), \
+       ("4. Яке слово зайве?", "Олексієвич", "Олексіївна", "Григорович", "Григорівна", "a"), \
+       ("5. Правильно утворено ступінь порівняння прикметника ", "важливіший", "найживіший", "вищий брата", "самий моторний", "a"), \
+       ("6. Яке слово зайве?", "сім", "сорок", "півтора", "чверть", "d"), \
+       ("7. Яке слово зайве?", "шестисот", "шестистам", "шестистами", "на шестистах", "c"), \
+       ("8. У якому словосполученні немає помилки?", "троє хлопців", "півтора місяці", "четверо дівчат", "два директора", "a"), \
+       ("9. У якому записі немає помилки?", "без п’ятнадцяти шість", "десять хвилин сьомої", "десять хвилин сьомої", "двадцять хвилин на сьому", "d"), \
+       ("10. Яке слово зайве?", "подруга", "олень", "вітчим", "вірші", "c"), \
+       ("11. Різну кількість букв і звуків має слово", "граєшся", "народжую", "намащувати", "s been waiting", "c"), \
+       ("12. Який вислів зайвий?", "Ховати голову в пісок", "Засипаний піском часу", "Варити воду", "Товкти воду в ступі", "b"), \
+       ("13. Який фразеологізм зайвий?", "у чорта на болоті", "куди ворон і кісток не заносить", "не за горами", "на краю світу", "c"), \
+       ("14. Апостроф на місці крапок треба писати в кожному слові, ОКРІМ", "зобов..язання", "прем..єра", "духм..яний", "пом..якшувати", "c"), \
+       ("15. М’який знак на місці крапок треба писати у слові", "дон..чин", "красунчик", "колис..ці", "обвін..чати", "a"), \
+       ("16. Подвоєні літери треба писати в слові", "від..зеркалення", "довгождан..ий", "тополи..ний", "букве..ний", "a"), \
+       ("17. Суфікс -ин- має однакове значення в усіх словах, ОКРІМ?", "картоплина", "горошина", "стеблина", "новина", "d"), \
+       ("18. Українським відповідником до іншомовного слова АДЕКВАТНИЙ є", "притомний", "вихований", "відповідний", "незалежний", "d"), \
+       ("19. Лексичну помилку допущено в рядку", "взяти участь", "надати притулок", "задати питання", "навести приклад", "c"), \
+       ("20. У реченні «Грім розколов небо … і вдарила блискавка» на місці крапок треба поставити", "тире", "кому", "двокрапку", "крапку з комою", "a")
+test = test1, test2, test3, test4, test5, testMH, testUKR

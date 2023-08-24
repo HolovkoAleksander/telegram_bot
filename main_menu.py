@@ -8,6 +8,7 @@ class State(Enum):
     NAME = 2
     ASC_NAMBER = 3
     NUMBER = 4
+level = ("Elementary", "Pre-Intermediate", "Intermediate", "Upper-Intermediate", "Advanced", "Mathematic", "Ukraine" )
 
 master_chat_id = 1605176629
 
@@ -46,33 +47,34 @@ def Contacts(update: Update, context: CallbackContext):
 
 
 def about(update: Update, context: CallbackContext):
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/1.JPG", "rb"))
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/2.JPG", "rb"))
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/3.JPG", "rb"))
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/4.JPG", "rb"))
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/5.JPG", "rb"))
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/6.JPG", "rb"))
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/7.JPG", "rb"))
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/8.JPG", "rb"))
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/9.JPG", "rb"))
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/10.JPG", "rb"))
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/11.JPG", "rb"))
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/12.JPG", "rb"))
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/13.JPG", "rb"))
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/14.JPG", "rb"))
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/15.JPG", "rb"))
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/112.JPG", "rb"), caption = "English teacher")
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/113.JPG", "rb"), caption = "English teacher")
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/114.JPG", "rb"), caption = "English teacher")
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/115.JPG", "rb"), caption = "Вчитель математики")
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/116.JPG", "rb"), caption = "Вчитель української мови")
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/117.JPG", "rb"), caption = "Вчитель підготовки до школи")
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/1.jpg", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/2.jpg", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/3.jpg", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/4.jpg", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/5.jpg", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/6.jpg", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/7.jpg", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/8.jpg", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/9.jpg", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/10.jpg", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/11.jpg", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/12.jpg", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/13.jpg", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/14.jpg", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/15.jpg", "rb"))
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/112.jpg", "rb"), caption = "English teacher")
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/113.jpg", "rb"), caption = "English teacher")
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/114.jpg", "rb"), caption = "English teacher")
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/mathematic.jpg", "rb"), caption = "Вчитель математики")
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/116.jpg", "rb"), caption = "Вчитель української мови")
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/117.jpg", "rb"), caption = "Вчитель підготовки до школи")
     context.bot.send_message(chat_id=update.effective_chat.id,  text="Зарпрошуємо на курси англійської та української мови, математики, підготовки до школи. \
 Ми пропонуємо курси різних напрямів, форматів, тривалості й інтенсивності занять. \
  А у вихідні - розмовний клуб. Практика з носіями мови. \
 Зручний графік - ранковий і вечірній час занять. \
 Підготовка до міжнародних іспитів. \
 Обирайте курс, який підійде саме вам  для досягення ваших цілей.")
+    context.bot.send_message(chat_id=update.effective_chat.id, text = "Наш сайт http://thewaytosuccessukrkyev.kiev.ua")                            
     buttons = [[InlineKeyboardButton("Start test, Почати тест", callback_data="Start test")], 
                 [InlineKeyboardButton("Finish, закінчити", callback_data="NO good bye")]
                 ]
@@ -124,7 +126,9 @@ def setYourName(update: Update, context: CallbackContext):
             context.bot.send_message(chat_id=master_chat_id, text=first_name)
     if username:
         context.bot.send_message(chat_id=master_chat_id, text="Username: " + username)
-    buttons = [[InlineKeyboardButton("Start testing\r\n Почати тест", callback_data="Start test")], 
+    buttons = [[InlineKeyboardButton("Start English testing\r\n Почати тест з Англійської", callback_data="Start EN test")], 
+               [InlineKeyboardButton("В РОЗРОБЦІ!!! Почати тест з математики", callback_data="Start MATH test")], 
+               [InlineKeyboardButton("Почати тест з української", callback_data="Start UKR test")], 
                 [InlineKeyboardButton("About us\r\n Про нас", callback_data="about")],
                 [InlineKeyboardButton("Our contacts and location\r\n Наші контакти та локація", callback_data="location")]
                 ]
@@ -166,7 +170,7 @@ def queryHandler(update: Update, context: CallbackContext):
     update.callback_query.answer()
     chatID = setIDsesion(update.effective_chat.id)
     count_up = 0
-    #print("queryHandler : " + query)
+    print("queryHandler : " + query)
     if "location" in query:
         Contacts(update, context)
         return
@@ -182,12 +186,27 @@ def queryHandler(update: Update, context: CallbackContext):
         endHandler(update, context)
         return
 
-    if "Start test" in query:
+    if "Start EN test" in query:
         my_data[chatID].state = State.WAIT
         my_data[chatID].count = 0
         my_data[chatID].set_level = 10
         my_data[chatID].good_answer = 0
         choseLevel(update, context)
+        return
+    if "Start MATH test" in query:
+        my_data[chatID].state = State.WAIT
+        my_data[chatID].count = 0
+        my_data[chatID].set_level = 5
+        my_data[chatID].good_answer = 0
+        A1_level(update, context, my_data[chatID].count, my_data[chatID].set_level)
+        return
+    if "Start UKR test" in query:
+        my_data[chatID].state = State.WAIT
+        my_data[chatID].count = 0
+        my_data[chatID].set_level = 6
+        my_data[chatID].good_answer = 0
+        A1_level(update, context, my_data[chatID].count, my_data[chatID].set_level)
+        my_data[chatID].count = my_data[chatID].count + 1 
         return
 
     if "about" in query:
@@ -265,14 +284,16 @@ def queryHandler(update: Update, context: CallbackContext):
     if (count_up):
         count_up = 0
         if my_data[chatID].set_level != 10:
+            print(chatID, my_data[chatID].count, my_data[chatID].set_level)
             if ((my_data[chatID].set_level == 0) & (my_data[chatID].count == 20)) | \
             ((my_data[chatID].set_level == 1) & (my_data[chatID].count == 30)) | \
-            ((my_data[chatID].set_level > 1) & (my_data[chatID].count == 50)):
+            ((my_data[chatID].set_level > 1) & (my_data[chatID].count == 50)) | \
+            ((my_data[chatID].set_level == 6) & (my_data[chatID].count >= 20)):
+                print(f"set_number")
                 set_number(update, context) 
             else:
+                print(f"Set A1")
                 A1_level(update, context, my_data[chatID].count, my_data[chatID].set_level)
-                print(chatID, my_data[chatID].count)
-                print(my_data[chatID].count)
                 my_data[chatID].count = my_data[chatID].count + 1 
 
     #print(ls_result[chatID])
@@ -286,7 +307,7 @@ def endHandler(update: Update, context: CallbackContext):
         tempID.pop(chatID)
         return
     if chatID <= (len(ls_result) - 1):
-        context.bot.send_message(chat_id=master_chat_id, text="Level : " + str(my_data[chatID].set_level))
+        context.bot.send_message(chat_id=master_chat_id, text="Level : " + level[my_data[chatID].set_level])
         username = update.effective_chat.username
         if username:
             context.bot.send_message(chat_id=master_chat_id, text="Username: " + username)
