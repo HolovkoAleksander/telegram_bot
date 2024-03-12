@@ -65,6 +65,7 @@ def about(update: Update, context: CallbackContext):
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/112.jpg", "rb"), caption = "English teacher")
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/113.jpg", "rb"), caption = "English teacher")
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/114.jpg", "rb"), caption = "English teacher")
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/118.jpg", "rb"), caption = "English teacher")
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/mathematic.jpg", "rb"), caption = "Вчитель математики")
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/116.jpg", "rb"), caption = "Вчитель української мови")
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/117.jpg", "rb"), caption = "Вчитель підготовки до школи")
@@ -154,6 +155,17 @@ def A1_level(update: Update, context: CallbackContext, count, set_level):
                 [InlineKeyboardButton(test[set_level][count][4], callback_data = str(count)  + " d")]]
     context.bot.send_message(chat_id=update.effective_chat.id, reply_markup=InlineKeyboardMarkup(buttons), text=test[set_level][count][0])
 
+def MATH_level(update: Update, context: CallbackContext, count, set_level):
+   # if update.effective_chat.username not in allowedUsernames:
+   #     context.bot.send_message(chat_id=update.effective_chat.id, text="You are not allowed to use this bot")
+   #     return
+    
+    buttons = [[InlineKeyboardButton("А", callback_data = str(count) + " a")], 
+                [InlineKeyboardButton("Б", callback_data = str(count)  + " b")], 
+                [InlineKeyboardButton("В", callback_data = str(count)  + " c")],
+                [InlineKeyboardButton("Г", callback_data = str(count)  + " d")]]
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open(test[set_level][count][1], "rb"), reply_markup=InlineKeyboardMarkup(buttons))
+
 def set_number(update: Update, context: CallbackContext):
    # if update.effective_chat.username not in allowedUsernames:
    #     context.bot.send_message(chat_id=update.effective_chat.id, text="You are not allowed to use this bot")
@@ -196,14 +208,15 @@ def queryHandler(update: Update, context: CallbackContext):
     if "Start MATH test" in query:
         my_data[chatID].state = State.WAIT
         my_data[chatID].count = 0
-        my_data[chatID].set_level = 5
+        my_data[chatID].set_level = 6
         my_data[chatID].good_answer = 0
-        A1_level(update, context, my_data[chatID].count, my_data[chatID].set_level)
+        MATH_level(update, context, my_data[chatID].count, my_data[chatID].set_level)
+        my_data[chatID].count = my_data[chatID].count + 1 
         return
     if "Start UKR test" in query:
         my_data[chatID].state = State.WAIT
         my_data[chatID].count = 0
-        my_data[chatID].set_level = 6
+        my_data[chatID].set_level = 5
         my_data[chatID].good_answer = 0
         A1_level(update, context, my_data[chatID].count, my_data[chatID].set_level)
         my_data[chatID].count = my_data[chatID].count + 1 
@@ -288,12 +301,16 @@ def queryHandler(update: Update, context: CallbackContext):
             if ((my_data[chatID].set_level == 0) & (my_data[chatID].count == 20)) | \
             ((my_data[chatID].set_level == 1) & (my_data[chatID].count == 30)) | \
             ((my_data[chatID].set_level > 1) & (my_data[chatID].count == 50)) | \
-            ((my_data[chatID].set_level == 6) & (my_data[chatID].count >= 20)):
+            ((my_data[chatID].set_level == 5) & (my_data[chatID].count >= 20)):
                 print(f"set_number")
                 set_number(update, context) 
             else:
-                print(f"Set A1")
-                A1_level(update, context, my_data[chatID].count, my_data[chatID].set_level)
+                if my_data[chatID].set_level == 6 :
+                    print(f"Set MATH")
+                    MATH_level(update, context, my_data[chatID].count, my_data[chatID].set_level)
+                else:
+                    print(f"Set A1")
+                    A1_level(update, context, my_data[chatID].count, my_data[chatID].set_level)
                 my_data[chatID].count = my_data[chatID].count + 1 
 
     #print(ls_result[chatID])
