@@ -69,6 +69,8 @@ def about(update: Update, context: CallbackContext):
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/mathematic.jpg", "rb"), caption = "Вчитель математики")
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/116.jpg", "rb"), caption = "Вчитель української мови")
     context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/117.jpg", "rb"), caption = "Вчитель підготовки до школи")
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/119.jpg", "rb"), caption = "Our native speaker")
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo = open("fhoto/120.jpg", "rb"), caption = "Our native speaker")
     context.bot.send_message(chat_id=update.effective_chat.id,  text="Зарпрошуємо на курси англійської та української мови, математики, підготовки до школи. \
 Ми пропонуємо курси різних напрямів, форматів, тривалості й інтенсивності занять. \
  А у вихідні - розмовний клуб. Практика з носіями мови. \
